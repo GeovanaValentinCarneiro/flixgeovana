@@ -1,211 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CineFlix — Estilo Netflix</title>
+  <title>GeovanaFlix Catálogo</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Fallback: se não houver hash na URL, abre a tela #home -->
-  <script>
-    (function () {
-      if (!location.hash) location.hash = "#home";
-    })();
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header class="header">
+    <div class="logo">Geovana<span>Flix</span></div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Filmes</a>
+      <a href="#">Séries</a>
+      <a href="#">Minha Lista</a>
+    </nav>
+  </header>
 
-  <!-- ====== TELA INICIAL ====== -->
-  <section id="home" class="screen screen-center">
-    <header class="brand">
-      <span class="brand-dot"></span>
-      <h1 class="brand-title">CineFlix</h1>
-    </header>
-
-    <div class="login-card">
-      <img class="avatar" src="img/sua-foto.jpg" alt="Seu avatar" />
-      <a class="btn" href="#catalogo" aria-label="Ir para o catálogo">Fazer login</a>
-      <p class="hint">Troque <code>img/sua-foto.jpg</code> pela sua imagem.</p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Vingadores: Ultimato</h1>
+      <p>Bem-vindo ao catálogo. Descubra os melhores filmes e séries!</p>
+      <button>Assistir</button>
+      <button class="btn-sec">Mais informações</button>
     </div>
   </section>
 
-  <!-- ====== CATÁLOGO ====== -->
-  <section id="catalogo" class="screen">
-    <header class="topbar">
-      <a href="#home" class="logo">CineFlix</a>
-      <nav class="topnav">
-        <a href="#catalogo" class="active">Início</a>
-      </nav>
-    </header>
+  <main class="catalog">
+    <h2>Populares</h2>
+    <div class="row" id="popular"></div>
 
-    <main class="catalog-content">
-      <!-- Categoria 1 -->
-      <section class="row">
-        <div class="row-head">
-          <h2>Categoria 1 • Em Alta</h2>
-        </div>
-        <div class="grid">
-          <!-- 6 filmes (linha de cima) -->
-          <a class="card" href="#filme-01" aria-label="Abrir detalhes do Filme 01">
-            <img src="img/filme01.jpg" alt="Filme 01" loading="lazy" />
-            <span class="card-title">Filme 01</span>
-          </a>
-          <a class="card" href="#filme-02" aria-label="Abrir detalhes do Filme 02">
-            <img src="img/filme02.jpg" alt="Filme 02" loading="lazy" />
-            <span class="card-title">Filme 02</span>
-          </a>
-          <a class="card" href="#filme-03" aria-label="Abrir detalhes do Filme 03">
-            <img src="img/anne with an e.png" alt="Filme 03" loading="lazy" />
-            <span class="card-title">Filme 03</span>
-          </a>
-          <a class="card" href="#filme-04" aria-label="Abrir detalhes do Filme 04">
-            <img src="img/filme04.jpg" alt="Filme 04" loading="lazy" />
-            <span class="card-title">Filme 04</span>
-          </a>
-          <a class="card" href="#filme-05" aria-label="Abrir detalhes do Filme 05">
-            <img src="img/filme05.jpg" alt="Filme 05" loading="lazy" />
-            <span class="card-title">Filme 05</span>
-          </a>
-          <a class="card" href="#filme-06" aria-label="Abrir detalhes do Filme 06">
-            <img src="img/filme06.jpg" alt="Filme 06" loading="lazy" />
-            <span class="card-title">Filme 06</span>
-          </a>
-        </div>
-      </section>
+    <h2>Ação</h2>
+    <div class="row" id="acao"></div>
 
-      <!-- Categoria 2 -->
-      <section class="row">
-        <div class="row-head">
-          <h2>Categoria 2 • Recomendados</h2>
-        </div>
-        <div class="grid">
-          <!-- 6 filmes (linha de baixo) -->
-          <a class="card" href="#filme-07" aria-label="Abrir detalhes do Filme 07">
-            <img src="img/filme07.jpg" alt="Filme 07" loading="lazy" />
-            <span class="card-title">Filme 07</span>
-          </a>
-          <a class="card" href="#filme-08" aria-label="Abrir detalhes do Filme 08">
-            <img src="img/filme08.jpg" alt="Filme 08" loading="lazy" />
-            <span class="card-title">Filme 08</span>
-          </a>
-          <a class="card" href="#filme-09" aria-label="Abrir detalhes do Filme 09">
-            <img src="img/filme09.jpg" alt="Filme 09" loading="lazy" />
-            <span class="card-title">Filme 09</span>
-          </a>
-          <a class="card" href="#filme-10" aria-label="Abrir detalhes do Filme 10">
-            <img src="img/filme10.jpg" alt="Filme 10" loading="lazy" />
-            <span class="card-title">Filme 10</span>
-          </a>
-          <a class="card" href="#filme-11" aria-label="Abrir detalhes do Filme 11">
-            <img src="img/filme11.jpg" alt="Filme 11" loading="lazy" />
-            <span class="card-title">Filme 11</span>
-          </a>
-          <a class="card" href="#filme-12" aria-label="Abrir detalhes do Filme 12">
-            <img src="img/filme12.jpg" alt="Filme 12" loading="lazy" />
-            <span class="card-title">Filme 12</span>
-          </a>
-        </div>
-      </section>
-    </main>
-  </section>
+    <h2>Drama</h2>
+    <div class="row" id="drama"></div>
 
-  <!-- ====== DETALHES (12 telas) ====== -->
-  <!-- Modelo: copie/cole e troque imagem/título/resumo -->
-  <section id="filme-01" class="screen detail">
-    <header class="topbar">
-      <a href="#catalogo" class="back" aria-label="Voltar">⟵ Voltar</a>
-      <span class="logo">CineFlix</span>
-    </header>
+    <h2>Animação</h2>
+    <div class="row" id="animacao"></div>
+  </main>
 
-    <div class="hero">
-      <img src="img/filme01.jpg" alt="Filme 01" />
-      <div class="gradient"></div>
-      <h1>Filme 01</h1>
-    </div>
+  <footer class="footer">
+    <p>© 2025 GeovanaFlix</p>
+  </footer>
 
-    <article class="detail-body">
-      <p>
-        Resumo do Filme 01. Escreva aqui uma sinopse breve. Ao rolar a página, o resumo aparece
-        abaixo do pôster grande, igual aos apps de streaming.
-      </p>
-    </article>
-  </section>
-
-  <!-- Duplique este bloco para todos os demais filmes (02–12) mudando id, imagens, títulos e resumo -->
-  <section id="filme-02" class="screen detail">
-    <header class="topbar">
-      <a href="#catalogo" class="back">⟵ Voltar</a>
-      <span class="logo">CineFlix</span>
-    </header>
-    <div class="hero">
-      <img src="img/filme02.jpg" alt="Filme 02" />
-      <div class="gradient"></div>
-      <h1>Filme 02</h1>
-    </div>
-    <article class="detail-body">
-      <p>Resumo do Filme 02…</p>
-    </article>
-  </section>
-
-  <section id="filme-03" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme03.jpg" alt="Filme 03" /><div class="gradient"></div><h1>Filme 03</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 03…</p></article>
-  </section>
-
-  <section id="filme-04" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme04.jpg" alt="Filme 04" /><div class="gradient"></div><h1>Filme 04</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 04…</p></article>
-  </section>
-
-  <section id="filme-05" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme05.jpg" alt="Filme 05" /><div class="gradient"></div><h1>Filme 05</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 05…</p></article>
-  </section>
-
-  <section id="filme-06" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme06.jpg" alt="Filme 06" /><div class="gradient"></div><h1>Filme 06</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 06…</p></article>
-  </section>
-
-  <section id="filme-07" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme07.jpg" alt="Filme 07" /><div class="gradient"></div><h1>Filme 07</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 07…</p></article>
-  </section>
-
-  <section id="filme-08" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme08.jpg" alt="Filme 08" /><div class="gradient"></div><h1>Filme 08</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 08…</p></article>
-  </section>
-
-  <section id="filme-09" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme09.jpg" alt="Filme 09" /><div class="gradient"></div><h1>Filme 09</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 09…</p></article>
-  </section>
-
-  <section id="filme-10" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme10.jpg" alt="Filme 10" /><div class="gradient"></div><h1>Filme 10</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 10…</p></article>
-  </section>
-
-  <section id="filme-11" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme11.jpg" alt="Filme 11" /><div class="gradient"></div><h1>Filme 11</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 11…</p></article>
-  </section>
-
-  <section id="filme-12" class="screen detail">
-    <header class="topbar"><a href="#catalogo" class="back">⟵ Voltar</a><span class="logo">CineFlix</span></header>
-    <div class="hero"><img src="img/filme12.jpg" alt="Filme 12" /><div class="gradient"></div><h1>Filme 12</h1></div>
-    <article class="detail-body"><p>Resumo do Filme 12…</p></article>
-  </section>
-
+  <script src="script.js"></script>
 </body>
 </html>
